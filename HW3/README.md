@@ -1,4 +1,6 @@
-#HW3 API
+HW3 API
+
+https://youtu.be/XNTghd4S-ls
 
 1) install node.js and npm
 2) clone repo
