@@ -21,6 +21,5 @@ app.use(express.static(publicDirectoryPath))
 
 require('./routes/basicRoutes')(app); 
 
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
-})
+const PORT = process.env.PORT || 3000
+app.listen(PORT);
