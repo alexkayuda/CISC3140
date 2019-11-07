@@ -1,6 +1,10 @@
 HW3 API
 
+Preview of the app:
 https://youtu.be/XNTghd4S-ls
+
+Try it yourself!
+https://alex-k-weather.herokuapp.com/
 
 1) install node.js and npm
 2) clone repo
