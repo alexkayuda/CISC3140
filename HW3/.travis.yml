@@ -1,0 +1,7 @@
+deploy:
+  provider: heroku
+  api_key:
+    secure: "KEY_HERE" # after running the following command to obtain the key, paste it here:
+                       # travis encrypt $(heroku auth:token) --add deploy.api_key
+  app:
+    production: alex-k-weather
