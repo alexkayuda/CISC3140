@@ -1,0 +1,40 @@
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop$ mkdir tmp
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop$ cd tmp	
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/tmp$ $ mkdir myproject
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/tmp$ $ cd myproject
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/tmp/myproject$ vim Main.java
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop$ cd ../..
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop$ mkdir subversion
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop$ cd subversion
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/subversion$ svnadmin create repos
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/subversion$ ls repos
+conf  db  format  hooks  locks  README.txt
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/subversion$ cd ..
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop$ svn import tmp/myproject file:///mnt/c/Users/Alex/Desktop/subversion/repos -m "initial commit"
+Adding         tmp/myproject/Main.java
+
+Committed revision 1.
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop$ svn checkout file:///mnt/c/Users/Alex/Desktop/subversion/repos myproject
+A    myproject/Main.java
+Checked out revision 1.
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop$ cd myproject
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ ls
+Main.java
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ javac Main.java
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ vim Makefile
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ make
+make: Nothing to  be done for 'default'.
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ make clean
+rm -f *.class
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ make
+javac -g Main.java
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ make clean
+rm -f *.class
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ svn commit
+Sending        Main.java
+Transmitting file data .
+Committed revision 2.
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$ svn update
+Updating '.':
+At revision 2.
+alexkayuda@DESKTOP-KNJK8EE:/mnt/c/Users/Alex/Desktop/myproject$
