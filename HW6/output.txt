@@ -1,0 +1,64 @@
+Alexanders-MBP:Desktop alex$ sqlite3
+SQLite version 3.28.0 2019-04-15 14:49:49
+Enter ".help" for usage hints.
+Connected to a transient in-memory database.
+Use ".open FILENAME" to reopen on a persistent database.
+sqlite> select * from feedback;
+Error: no such table: feedback
+sqlite> CREATE TABLE feedback (
+   ...>   "timestamp" TEXT,
+   ...>   "organization" INTEGER NOT NULL,
+   ...>   "clearness" INTEGER NOT NULL,
+   ...>   "enthusiasm" INTEGER NOT NULL,
+   ...>   "have_learned" INTEGER NOT NULL
+   ...> );
+sqlite> 
+sqlite> .schema feedback
+CREATE TABLE feedback (
+  "timestamp" text,
+  "organization" INTEGER NOT NULL,
+  "clearness" INTEGER NOT NULL,
+  "enthusiasm" INTEGER NOT NULL,
+  "have_learned" INTEGER NOT NULL
+);
+sqlite> .mode csv
+sqlite> .import /Users/alex/Desktop/4433M.csv feedback
+sqlite> select * from feedback;
+"10/23/2019 15:00:26",5,5,5,5
+"10/23/2019 15:03:18",5,5,4,5
+"10/23/2019 15:03:43",3,3,3,2
+"10/23/2019 15:03:47",4,4,5,5
+"10/23/2019 15:05:02",5,5,5,5
+"10/23/2019 15:05:28",4,4,5,5
+"10/23/2019 15:05:33",4,4,5,4
+"10/23/2019 15:05:33",5,5,5,5
+"10/23/2019 15:06:01",5,5,5,5
+"10/23/2019 15:07:39",5,5,5,5
+"10/23/2019 15:07:51",5,5,5,5
+"10/23/2019 15:10:56",5,5,5,5
+"10/23/2019 15:13:23",5,5,5,5
+"10/23/2019 15:13:52",5,5,5,5
+"10/23/2019 15:20:48",5,5,5,5
+"10/26/2019 13:01:47",5,4,3,5
+"10/27/2019 17:10:12",5,5,5,5
+"10/28/2019 0:15:05",5,4,4,3
+"10/29/2019 16:33:42",4,2,5,3
+"10/30/2019 16:37:09",5,5,5,5
+"11/02/2019 16:05:02",5,5,5,5
+"11/04/2019 12:37:06",5,5,5,4
+sqlite> select max(organization) from feedback;
+5
+sqlite> select min(have_learned) from feedback;
+2
+sqlite> select avg(organization) from feedback;
+4.72727272727273
+sqlite> select avg(clearness) from feedback;
+4.54545454545455
+sqlite> select avg(enthusiasm) from feedback;
+4.72727272727273
+sqlite> select avg(have_learned) from feedback;
+4.59090909090909
+sqlite> drop table feedback;
+sqlite> .schema feedback
+sqlite> .quit
+Alexanders-MBP:Desktop alex$ 

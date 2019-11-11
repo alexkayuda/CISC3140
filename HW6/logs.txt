@@ -1,0 +1,42 @@
+
+select * from feedback;
+
+CREATE TABLE feedback (
+  "timestamp" text,
+  "organization" INTEGER NOT NULL,
+  "clearness" INTEGER NOT NULL,
+  "enthusiasm" INTEGER NOT NULL,
+  "have_learned" INTEGER NOT NULL
+);
+
+.schema feedback
+
+.mode csv
+
+.import /Users/alex/Desktop/4433M.csv feedback
+
+select * from feedback;
+
+select max(organization) from feedback;
+
+select min(have_learned) from feedback;
+
+select avg(organization) from feedback;
+
+select avg(clearness) from feedback;
+
+select avg(enthusiasm) from feedback;
+
+select avg(have_learned) from feedback;
+
+drop table feedback;
+
+.schema feedback
+
+.quit
+
+
+
+
+
+
